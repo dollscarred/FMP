@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOLLSCAR – Something will be taken from you</title>
+
+<style>
+body {
+margin: 0;
+background: black;
+color: #e6e6e6;
+font-family: monospace;
+overflow-x: hidden;
+}
+
+.glitch {
+font-size: 3rem;
+color: #ff0033;
+position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+content: attr(data-text);
+position: absolute;
+left: 0;
+}
+
+.glitch::before {
+animation: glitchTop 1s infinite linear;
+color: red;
+}
+
+.glitch::after {
+animation: glitchBottom 1.2s infinite linear;
+color: blue;
+}
+
+@keyframes glitchTop {
+0% { transform: translate(0); }
+50% { transform: translate(-2px, -2px); }
+100% { transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+0% { transform: translate(0); }
+50% { transform: translate(2px, 2px); }
+100% { transform: translate(0); }
+}
+
+header {
+padding: 15px;
+text-align: center;
+border-bottom: 1px solid #111;
+}
+
+nav a {
+color: #ff0033;
+margin: 0 10px;
+text-decoration: none;
+}
+
+.hero {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+}
+
+.subtitle {
+opacity: 0.6;
+}
+
+section {
+max-width: 900px;
+margin: auto;
+padding: 60px 20px;
+}
+
+h2 {
+color: #ff0033;
+}
+
+.card {
+background: #050505;
+padding: 25px;
+margin-top: 20px;
+border: 1px solid #111;
+}
+
+.track {
+cursor: pointer;
+padding: 10px;
+border-bottom: 1px solid #111;
+}
+
+.track:hover {
+background: #111;
+}
+
+#nowPlaying {
+margin-top: 15px;
+color: #ff0033;
+}
+
+footer {
+text-align: center;
+padding: 20px;
+opacity: 0.4;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="#concept">Concept</a>
+<a href="#research">Research</a>
+<a href="#development">Development</a>
+<a href="#outcome">Outcome</a>
+<a href="#evaluation">Evaluation</a>
+</nav>
+</header>
+
+<div class="hero">
+<div class="glitch" data-text="DOLLSCAR">DOLLSCAR</div>
+<p class="subtitle">Something will be taken from you</p>
+</div>
+
+<section id="concept">
+<h2>Project Concept</h2>
+<div class="card">
+<p>This project explores psychological tension, violence, and identity through experimental sound.</p>
+<p>By combining necrotrap, horrorcore, techno, hardstyle, jumpstyle, and ambient music, I aimed to push beyond conventional genre boundaries.</p>
+</div>
+</section>
+
+<section id="research">
+<h2>Research & Influences</h2>
+<div class="card">
+<p>I analysed how distortion, repetition, and atmosphere are used within underground music scenes.</p>
+<p>This research informed my use of dissonance, silence, and aggressive rhythm structures.</p>
+</div>
+</section>
+
+<section id="development">
+<h2>Development Process</h2>
+<div class="card">
+<p>I experimented with BPM ranges, distorted bass, and rhythmic structures inspired by hardstyle and techno.</p>
+<p>I refined balance between clarity and intensity.</p>
+</div>
+</section>
+
+<section id="outcome">
+<h2>Final Outcome</h2>
+<div class="card">
+
+<p><strong>Click a track:</strong></p>
+
+<div class="track" onclick="playTrack(this)">Do you like hurting other people? [Intro]</div>
+<div class="track" onclick="playTrack(this)">Midnight Animal ft. Skulldog</div>
+<div class="track" onclick="playTrack(this)">Miami Mutilator</div>
+<div class="track" onclick="playTrack(this)">50 Blessings</div>
+<div class="track" onclick="playTrack(this)">Fun & Games</div>
+<div class="track" onclick="playTrack(this)">Prank Call ft Needleguts</div>
+<div class="track" onclick="playTrack(this)">Adrenaline Junkie</div>
+<div class="track" onclick="playTrack(this)">So this is what the end looks like? [Outro]</div>
+
+<p id="nowPlaying"></p>
+
+</div>
+</section>
+
+<section id="evaluation">
+<h2>Evaluation</h2>
+<div class="card">
+<p>This project established a clear artistic identity through experimental genre fusion.</p>
+<p>Strength: consistent tone. Improvement: mix precision and mastering balance.</p>
+</div>
+</section>
+
+<footer>
+<p>© DOLLSCAR 2026</p>
+</footer>
+
+<script>
+function playTrack(element) {
+document.getElementById("nowPlaying").innerText =
+"NOW PLAYING: " + element.innerText;
+}
+</script>
+
+</body>
+</html>
